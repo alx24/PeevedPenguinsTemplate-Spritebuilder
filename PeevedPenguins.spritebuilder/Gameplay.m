@@ -48,13 +48,12 @@
     CCActionFollow *folow = [CCActionFollow actionWithTarget:penguin worldBoundary:self.boundingBox];
     [self runAction:folow];
     
-    
-    
-    
-    
-    
 }
 
+-(void)retry
+{
+    [[CCDirector sharedDirector ] replaceScene:[CCBReader loadAsScene:@"GamePlay"]];
+}
 
 
 
