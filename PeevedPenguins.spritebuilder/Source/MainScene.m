@@ -13,6 +13,7 @@
 
 -(void)play
 {
-    NSLog(@"teste butao play");
+    CCScene* gamePlayScene = [CCBReader loadAsScene:@"GamePlay"];
+    [[CCDirector sharedDirector] replaceScene:gamePlayScene];
 }
 @end
