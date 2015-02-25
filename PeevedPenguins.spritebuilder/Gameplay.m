@@ -31,7 +31,7 @@
 -(void)luachPenguin
 {
     // carregando peguin definido no spritebuilde
-    CCNode* penguin = [CCBReader load:@"Pinguim"];
+    CCNode* penguin = [CCBReader load:@"Penguins"];
     
     penguin.position = ccpAdd(_catapultArm.position, ccp(16,50));
     
