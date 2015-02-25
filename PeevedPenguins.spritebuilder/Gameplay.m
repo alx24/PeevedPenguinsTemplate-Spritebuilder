@@ -13,6 +13,7 @@
     CCPhysicsNode* _physicsNode;
     CCNode* _catapultArm;
     CCNode* _levelNode;
+    CCNode* _nodeScroll;
     
 }
 
@@ -46,7 +47,7 @@
     [penguin.physicsBody applyForce:force];
     self.position = ccp(0,0);
     CCActionFollow *folow = [CCActionFollow actionWithTarget:penguin worldBoundary:self.boundingBox];
-    [self runAction:folow];
+    [_nodeScroll runAction:folow];
     
 }
 
