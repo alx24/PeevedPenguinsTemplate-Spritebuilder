@@ -10,4 +10,9 @@
 
 @implementation MainScene
 
+
+-(void)play
+{
+    NSLog(@"teste butao play");
+}
 @end

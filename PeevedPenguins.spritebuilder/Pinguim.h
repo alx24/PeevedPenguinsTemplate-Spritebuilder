@@ -10,4 +10,7 @@
 
 @interface Pinguim : CCSprite
 
+
+
+
 @end
