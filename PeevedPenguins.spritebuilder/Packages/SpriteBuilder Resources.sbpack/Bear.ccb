@@ -281,7 +281,7 @@
 						<key>type</key>
 						<string>Degrees</string>
 						<key>value</key>
-						<real>8.3333320617675781</real>
+						<real>-2.1666660308837891</real>
 					</dict>
 					<dict>
 						<key>name</key>
@@ -456,7 +456,7 @@
 			<key>offset</key>
 			<real>0.0</real>
 			<key>position</key>
-			<real>1.3333333730697632</real>
+			<real>1.6333333253860474</real>
 			<key>resolution</key>
 			<real>30</real>
 			<key>scale</key>
