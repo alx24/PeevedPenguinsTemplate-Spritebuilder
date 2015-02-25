@@ -17,10 +17,7 @@
     
 }
 
--(void)teste{
-    
-    NSLog(@"vairavel phiscs e ctapult amr criadas");
-}
+
 
 
 
