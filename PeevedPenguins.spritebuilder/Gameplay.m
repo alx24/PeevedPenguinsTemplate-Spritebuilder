@@ -24,6 +24,27 @@
     
 }
 
+
+-(void)ccPhysicsCollisionPostSolve:(CCPhysicsCollisionPair *)pair Seal:(CCNode *)nodeA wildcard:(CCNode *)nodeB
+{
+    
+    float energy = [pair totalKineticEnergy];
+    
+    // if energy is large enough, remove the seal
+    if (energy > 5000.f) {
+        [[_physicsNode space] addPostStepBlock:^{
+            [self sealRemoved:nodeA];
+        } key:nodeA];
+    }
+    
+}
+
+
+- (void)sealRemoved:(CCNode *)seal {
+    [seal removeFromParent];
+}
+
+
 - (void)didLoadFromCCB
 {
     
@@ -137,25 +158,6 @@
 -(void)retry
 {
     [[CCDirector sharedDirector ] replaceScene:[CCBReader loadAsScene:@"GamePlay"]];
-}
-
--(void)ccPhysicsCollisionPostSolve:(CCPhysicsCollisionPair *)pair Seal:(CCNode *)nodeA wildcard:(CCNode *)nodeB
-{
-   
-    float energy = [pair totalKineticEnergy];
-    
-    // if energy is large enough, remove the seal
-    if (energy > 5000.f) {
-        [[_physicsNode space] addPostStepBlock:^{
-            [self sealRemoved:nodeA];
-        } key:nodeA];
-    }
-
-}
-
-
-- (void)sealRemoved:(CCNode *)seal {
-    [seal removeFromParent];
 }
 
 
