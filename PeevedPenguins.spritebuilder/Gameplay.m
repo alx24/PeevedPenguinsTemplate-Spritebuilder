@@ -25,25 +25,6 @@
 }
 
 
--(void)ccPhysicsCollisionPostSolve:(CCPhysicsCollisionPair *)pair Seal:(CCNode *)nodeA wildcard:(CCNode *)nodeB
-{
-    
-    float energy = [pair totalKineticEnergy];
-    
-    // if energy is large enough, remove the seal
-    if (energy > 5000.f) {
-        [[_physicsNode space] addPostStepBlock:^{
-            [self sealRemoved:nodeA];
-        } key:nodeA];
-    }
-    
-}
-
-
-- (void)sealRemoved:(CCNode *)seal {
-    [seal removeFromParent];
-}
-
 
 - (void)didLoadFromCCB
 {
@@ -135,6 +116,27 @@
     // when touches are cancelled, meaning the user drags their finger off the screen or onto something else, release the catapult
     [self releaseCatapult];
 }
+
+
+-(void)ccPhysicsCollisionPostSolve:(CCPhysicsCollisionPair *)pair Seal:(CCNode *)nodeA wildcard:(CCNode *)nodeB
+{
+    
+    float energy = [pair totalKineticEnergy];
+    
+    // if energy is large enough, remove the seal
+    if (energy > 5000.f) {
+        [[_physicsNode space] addPostStepBlock:^{
+            [self sealRemoved:nodeA];
+        } key:nodeA];
+    }
+    
+}
+
+
+- (void)sealRemoved:(CCNode *)Seal {
+    [Seal removeFromParent];
+}
+
 
 // metado para lanca peguin da cataputa
 //-(void)luachPenguin
