@@ -14,6 +14,7 @@
     CCNode* _catapultArm;
     CCNode* _levelNode;
     CCNode* _nodeScrol;
+    CCNode* _pullbackNode;
     
 }
 
@@ -26,6 +27,7 @@
     [_levelNode addChild:level];
     
     _physicsNode.debugDraw = YES;
+    _pullbackNode.physicsBody.collisionMask = @[];
 }
 
 -(void)touchBegan:(CCTouch *)touch withEvent:(CCTouchEvent *)event
